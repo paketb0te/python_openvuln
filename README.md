@@ -1,6 +1,6 @@
 # Python OpenVuln Report
 
-This project is heavily inspired by @NWMichl's [openvuln](https://github.com/NWMichl/openvuln) Project.
+This project is heavily inspired by [@NWMichl](https://github.com/NWMichl)'s [openvuln](https://github.com/NWMichl/openvuln) Project.
 
 This project re-implements some of the features found there in pure python, making use of nornir / netmiko / genie.
 
