@@ -1,0 +1,16 @@
+---
+
+ios-xe-1:
+  hostname: ios-xe-mgmt.cisco.com
+  groups:
+    - ios_xe_on_csr_sandbox
+
+ios-xe-2:
+  hostname: ios-xe-mgmt.cisco.com
+  groups:
+    - ios_xe_on_csr_sandbox
+
+nx-os-1:
+  hostname: sbx-nxos-mgmt.cisco.com
+  groups:
+    - nxos_on_nx9k_sandbox

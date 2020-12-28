@@ -1,0 +1,14 @@
+---
+
+ios_xe_on_csr_sandbox:
+  port: 8181
+  username: developer
+  password: C1sco12345
+  # platform 'cisco_xe' required by Genie to parse correctly
+  platform: cisco_xe
+
+nxos_on_nx9k_sandbox:
+  port: 8181
+  username: admin
+  password: Admin_1234!
+  platform: nxos

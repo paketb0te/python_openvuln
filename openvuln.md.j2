@@ -1,0 +1,16 @@
+# Vulnerability Report
+
+Report created at {{ now }}
+{% for os_version in os_version_vuln %}
+
+##{% for value in os_version %} {{ value }}{% endfor %}
+
+
+{{ os_version_vuln[os_version]["hosts"] | length }} device(s) are running this OS version.
+
+| Advisory-ID | Impact | CVSS | CVE | Fixed with |
+| :---------- | :----- | :--- | :-- | :--------- |
+{% for adv in os_version_vuln[os_version].advisories | sort(attribute="sir") | sort(attribute="cvssBaseScore", reverse=True) %}
+| [{{ adv.advisoryId }}]({{ adv.publicationUrl }}) | {{ adv.sir }} | {{ adv.cvssBaseScore }} | [{{ adv.cves[0] }}](https://cve.circl.lu/cve/{{ adv.cves[0] }}) | {{ adv.firstFixed[0] }}
+{% endfor %}
+{% endfor %}
