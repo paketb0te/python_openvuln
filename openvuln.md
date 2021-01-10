@@ -1,10 +1,10 @@
 # Vulnerability Report
 
-Report created at 2020-12-28 22:31:04
+Report created at 2021-01-10 18:06:35
 
 ## IOS-XE 16.9.3
 
-2 device(s) are running this OS version.
+1 device(s) are running this OS version.
 
 | Advisory-ID | Impact | CVSS | CVE | Fixed with |
 | :---------- | :----- | :--- | :-- | :--------- |
