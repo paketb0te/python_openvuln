@@ -88,9 +88,9 @@ def get_openvuln_by_os_version(os_versions: dict, access_dict: dict) -> dict:
             )
             advisories[(os, version)]["advisories"].append(
                 {
-                    "advisoryId": advisory.get("advisoryId"),
+                    "advisoryId": advisory.get("advisoryId", "n/a"),
                     "cves": advisory.get("cves", "n/a"),
-                    "cvssBaseScore": float(advisory.get("cvssBaseScore", 0)),
+                    "cvssBaseScore": force_float(advisory.get("cvssBaseScore", 0)),
                     "firstFixed": advisory.get("firstFixed", "n/a"),
                     "sir": advisory.get("sir", "n/a"),
                     "publicationUrl": advisory.get("publicationUrl", "n/a"),
@@ -194,6 +194,16 @@ def render_report(os_version_vuln: dict) -> None:
     with open("openvuln.md", "w") as file:
         file.write(rendered)
 
+def force_float(float_str:str)-> float:
+    """
+    checks if a string can be converted to float.
+    if yes, returns the converted float.
+    if not, returns 0.0
+    """
+    try:
+        return float(float_str)
+    except ValueError as exc:
+        return 0.0
 
 def main() -> None:
     """
